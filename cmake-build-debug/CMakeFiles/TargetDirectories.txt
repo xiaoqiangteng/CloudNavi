@@ -1,0 +1,3 @@
+/home/xiaoqiang/programmings/Android/workspace/CloudNavi/CloudNavi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/xiaoqiang/programmings/Android/workspace/CloudNavi/CloudNavi/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/xiaoqiang/programmings/Android/workspace/CloudNavi/CloudNavi/cmake-build-debug/CMakeFiles/CloudNavi.dir

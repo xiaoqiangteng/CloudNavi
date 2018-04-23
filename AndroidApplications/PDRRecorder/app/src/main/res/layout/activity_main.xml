@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="欢迎使用PDR数据采集软件，请输入采集文件名"
+        android:id="@+id/textView" />
+
+    <life.StepView
+        android:id="@+id/step_surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/step_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/orient_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/step_text" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:text="开始" />
+
+    <Button
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/start"
+        android:layout_toRightOf="@+id/start"
+        android:text="结束" />
+
+    <EditText
+        android:id="@+id/stationID"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/exitID"
+        android:layout_alignBottom="@+id/exitID"
+        android:layout_toEndOf="@+id/orient_text"
+        android:layout_toRightOf="@+id/orient_text"
+        android:ems="10"
+        android:hint="Sta.ID"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/exitID"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orient_text"
+        android:layout_toEndOf="@+id/stationID"
+        android:layout_toRightOf="@+id/stationID"
+        android:ems="10"
+        android:hint="ExitID"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/pathID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/exitID"
+        android:layout_alignBottom="@+id/exitID"
+        android:layout_toEndOf="@+id/exitID"
+        android:layout_toRightOf="@+id/exitID"
+        android:ems="10"
+        android:hint="PathID"
+        android:inputType="number" />
+</RelativeLayout>

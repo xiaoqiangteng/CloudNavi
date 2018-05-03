@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include <pcl/io/pcd_io.h>
 #include <pcl/registration/icp.h>
 #include <string>
@@ -20,6 +21,8 @@
 #include <pcl/registration/transformation_estimation_lm.h>
 #include <pcl/registration/transformation_estimation_svd.h>
 #include <pcl/features/normal_3d.h>
+
+using namespace std;
 
 int
 main (int argc, char** argv)
@@ -45,12 +48,12 @@ main (int argc, char** argv)
     corr_est.determineCorrespondences (*correspondences,.1);
     std::cout << "No. of correspondence is [*correspondences] " << int (correspondences->size ()) << std::endl;
 
-    boost::shared_ptr<pcl::Correspondences> correspondences_remain (new pcl::Correspondences);
-    pcl::registration::CorrespondenceRejectorMedianDistance rej;
-    rej.setMedianFactor (8.79241104);
-    rej.setInputCorrespondences (correspondences);
-    rej.getCorrespondences (*correspondences_remain);
-    std::cout << "No. of remain correspondence is " << int (correspondences_remain->size ()) << std::endl;
+//    boost::shared_ptr<pcl::Correspondences> correspondences_remain (new pcl::Correspondences);
+//    pcl::registration::CorrespondenceRejectorMedianDistance rej;
+//    rej.setMedianFactor (8.79241104);
+//    rej.setInputCorrespondences (correspondences);
+//    rej.getCorrespondences (*correspondences_remain);
+//    std::cout << "No. of remain correspondence is " << int (correspondences_remain->size ()) << std::endl;
 
     return (0);
 }

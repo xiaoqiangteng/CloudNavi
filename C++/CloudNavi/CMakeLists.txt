@@ -37,3 +37,9 @@ target_link_libraries (obj2pcd ${PCL_LIBRARIES})
 
 add_executable(CorrespondenceEstimation CorrespondenceEstimation.cpp)
 target_link_libraries (CorrespondenceEstimation ${PCL_LIBRARIES})
+
+add_executable(locEstimation locEstimation.cpp)
+target_link_libraries (locEstimation ${PCL_LIBRARIES})
+
+add_executable(locEstimationWithInteger locEstimationWithInteger.cpp)
+target_link_libraries (locEstimationWithInteger ${PCL_LIBRARIES})

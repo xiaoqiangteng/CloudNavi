@@ -44,36 +44,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ply2pcd.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ply2pcd.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="56" column="26" lean-forward="false" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="locEstimation.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/locEstimation.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1101">
-              <caret line="164" column="9" lean-forward="false" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+            <state relative-caret-position="450">
+              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding>
                 <element signature="e#37#56#0" expanded="true" />
-                <element signature="e#1313#2646#0" expanded="false" />
-                <marker date="1525337064435" expanded="true" signature="3289:3553" ph="..." />
+                <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CorrespondenceEstimation.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CorrespondenceEstimation.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -262,15 +241,15 @@
       <workItem from="1525054316452" duration="31292000" />
       <workItem from="1525310849605" duration="4000" />
       <workItem from="1525310938074" duration="1886000" />
-      <workItem from="1525318048547" duration="7066000" />
+      <workItem from="1525318048547" duration="11829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54766000" />
+    <option name="totallyTimeSpent" value="59529000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="292" y="24" width="1857" height="1092" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -328,8 +307,7 @@
           <caret line="128" column="44" lean-forward="false" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
-            <element signature="e#1313#2646#0" expanded="false" />
-            <marker date="1525337064435" expanded="true" signature="3289:3553" ph="..." />
+            <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
           </folding>
         </state>
       </provider>
@@ -358,8 +336,7 @@
           <caret line="135" column="13" lean-forward="false" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
-            <element signature="e#1313#2646#0" expanded="false" />
-            <marker date="1525337064435" expanded="true" signature="3289:3553" ph="..." />
+            <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
           </folding>
         </state>
       </provider>
@@ -388,8 +365,7 @@
           <caret line="135" column="13" lean-forward="false" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
-            <element signature="e#1313#2646#0" expanded="false" />
-            <marker date="1525337064435" expanded="true" signature="3289:3553" ph="..." />
+            <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
           </folding>
         </state>
       </provider>
@@ -520,12 +496,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/locEstimation.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1101">
-          <caret line="164" column="9" lean-forward="false" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+        <state relative-caret-position="450">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
-            <element signature="e#1313#2646#0" expanded="false" />
-            <marker date="1525337064435" expanded="true" signature="3289:3553" ph="..." />
+            <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
           </folding>
         </state>
       </provider>

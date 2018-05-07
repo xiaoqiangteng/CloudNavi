@@ -4,6 +4,8 @@ project(cloudnavi)
 
 find_package(PCL 1.2 REQUIRED)
 
+set( CMAKE_CXX_FLAGS "-std=c++11 -O3" )
+
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
@@ -43,3 +45,9 @@ target_link_libraries (locEstimation ${PCL_LIBRARIES})
 
 add_executable(locEstimationWithInteger locEstimationWithInteger.cpp)
 target_link_libraries (locEstimationWithInteger ${PCL_LIBRARIES})
+
+add_executable(locEstimationAll  locEstimationAll.cpp)
+target_link_libraries (locEstimationAll ${PCL_LIBRARIES})
+
+add_executable(GeneratePCDFromOurs  GeneratePCDFromOurs.cpp)
+target_link_libraries (GeneratePCDFromOurs ${PCL_LIBRARIES})

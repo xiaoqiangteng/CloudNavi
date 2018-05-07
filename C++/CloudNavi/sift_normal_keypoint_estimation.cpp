@@ -44,7 +44,14 @@
 
 // STL
 #include <iostream>
-
+#include <pcl/console/parse.h>
+#include <fstream>
+#include <iomanip>
+#include <string>
+#include <stdlib.h>
+#include <vector>
+#include <dirent.h>
+#include <time.h>
 // PCL
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
@@ -58,78 +65,99 @@
  * as usually used for SIFT keypoint estimation.
  */
 
-int
-main(int, char** argv)
-{
-    std::string filename = argv[1];
-    std::cout << "Reading " << filename << std::endl;
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_xyz (new pcl::PointCloud<pcl::PointXYZ>);
-    if(pcl::io::loadPCDFile<pcl::PointXYZ> (filename, *cloud_xyz) == -1) // load the file
-    {
-        PCL_ERROR ("Couldn't read file");
-        return -1;
-    }
-    std::cout << "points: " << cloud_xyz->points.size () <<std::endl;
+using namespace std;
 
+// This function displays the help
+void showHelp(char * program_name)
+{
+    std::cout << std::endl;
+    std::cout << "Usage: " << program_name << " path[PCD] file_name[results] " << std::endl;
+    std::cout << "-h:  Show this help." << std::endl;
+}
+
+bool GetFiles(const std::string filePath, std::vector<std::string > &files){
+    struct dirent *ptr;
+    DIR *dir;
+    std::string PATH = filePath;
+    dir=opendir(PATH.c_str());
+    while((ptr=readdir(dir))!=NULL)
+    {
+        if(ptr->d_name[0] == '.')
+            continue;
+        files.push_back(ptr->d_name);
+    }
+    closedir(dir);
+    return true;
+}
+
+int
+main(int argc, char** argv)
+{
+    // Show help
+    if (pcl::console::find_switch (argc, argv, "-h") || pcl::console::find_switch (argc, argv, "--help")) {
+        showHelp (argv[0]);
+        return 0;
+    }
+    string pcd_path = argv[1];
+    string file_name_results = argv[2];
+    std::string txt_file_path = pcd_path + "/";
+    std::vector<std::string > files;
     // Parameters for sift computation
     const float min_scale = 0.01f;
     const int n_octaves = 3;
     const int n_scales_per_octave = 4;
     const float min_contrast = 0.001f;
-
-    // Estimate the normals of the cloud_xyz
-    pcl::NormalEstimation<pcl::PointXYZ, pcl::PointNormal> ne;
-    pcl::PointCloud<pcl::PointNormal>::Ptr cloud_normals (new pcl::PointCloud<pcl::PointNormal>);
-    pcl::search::KdTree<pcl::PointXYZ>::Ptr tree_n(new pcl::search::KdTree<pcl::PointXYZ>());
-
-    ne.setInputCloud(cloud_xyz);
-    ne.setSearchMethod(tree_n);
-    ne.setRadiusSearch(0.2);
-    ne.compute(*cloud_normals);
-
-    // Copy the xyz info from cloud_xyz and add it to cloud_normals as the xyz field in PointNormals estimation is zero
-    for(size_t i = 0; i<cloud_normals->points.size(); ++i)
-    {
-        cloud_normals->points[i].x = cloud_xyz->points[i].x;
-        cloud_normals->points[i].y = cloud_xyz->points[i].y;
-        cloud_normals->points[i].z = cloud_xyz->points[i].z;
+    //Write file
+    fstream outfile;
+    outfile.open(file_name_results, ios::out);
+    outfile << "# pcd_file_name\tSIFT points\tcompute_time\n";
+    clock_t compute_sift_start_time, compute_sift_end_time;
+    if(!GetFiles(txt_file_path, files)){
+        std::cerr << "Read file path error\n" << std::endl;
+    } else {
+        for (int i = 0; i < files.size(); ++i) {
+            std::cout << "Reading " << files[i] << std::endl;
+            string pcd_file_name = txt_file_path + files[i];
+            pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_xyz (new pcl::PointCloud<pcl::PointXYZ>);
+            if(pcl::io::loadPCDFile<pcl::PointXYZ> (pcd_file_name, *cloud_xyz) == -1) // load the file
+            {
+                PCL_ERROR ("Couldn't read pcd file");
+            } else {
+                outfile << files[i] << "\t";
+                std::cout << "\tpoints: " << cloud_xyz->points.size () <<std::endl;
+                compute_sift_start_time = clock();
+                // Estimate the normals of the cloud_xyz
+                pcl::NormalEstimation<pcl::PointXYZ, pcl::PointNormal> ne;
+                pcl::PointCloud<pcl::PointNormal>::Ptr cloud_normals (new pcl::PointCloud<pcl::PointNormal>);
+                pcl::search::KdTree<pcl::PointXYZ>::Ptr tree_n(new pcl::search::KdTree<pcl::PointXYZ>());
+                ne.setInputCloud(cloud_xyz);
+                ne.setSearchMethod(tree_n);
+                ne.setRadiusSearch(0.2);
+                ne.compute(*cloud_normals);
+                // Copy the xyz info from cloud_xyz and add it to cloud_normals as the xyz field in PointNormals estimation is zero
+                for(size_t i = 0; i<cloud_normals->points.size(); ++i)
+                {
+                    cloud_normals->points[i].x = cloud_xyz->points[i].x;
+                    cloud_normals->points[i].y = cloud_xyz->points[i].y;
+                    cloud_normals->points[i].z = cloud_xyz->points[i].z;
+                }
+                // Estimate the sift interest points using normals values from xyz as the Intensity variants
+                pcl::SIFTKeypoint<pcl::PointNormal, pcl::PointWithScale> sift;
+                pcl::PointCloud<pcl::PointWithScale> result;
+                pcl::search::KdTree<pcl::PointNormal>::Ptr tree(new pcl::search::KdTree<pcl::PointNormal> ());
+                sift.setSearchMethod(tree);
+                sift.setScales(min_scale, n_octaves, n_scales_per_octave);
+                sift.setMinimumContrast(min_contrast);
+                sift.setInputCloud(cloud_normals);
+                sift.compute(result);
+                compute_sift_end_time = clock();
+                outfile << result.points.size () << "\t" << (double) (compute_sift_end_time - compute_sift_start_time)/CLOCKS_PER_SEC << endl;
+                std::cout << "\tSIFT points: " << result.points.size () << std::endl;
+                std::cout << "\ttime: " << (double) (compute_sift_end_time - compute_sift_start_time)/CLOCKS_PER_SEC << "s" << std::endl;
+            }
+        }
     }
-
-    // Estimate the sift interest points using normals values from xyz as the Intensity variants
-    pcl::SIFTKeypoint<pcl::PointNormal, pcl::PointWithScale> sift;
-    pcl::PointCloud<pcl::PointWithScale> result;
-    pcl::search::KdTree<pcl::PointNormal>::Ptr tree(new pcl::search::KdTree<pcl::PointNormal> ());
-    sift.setSearchMethod(tree);
-    sift.setScales(min_scale, n_octaves, n_scales_per_octave);
-    sift.setMinimumContrast(min_contrast);
-    sift.setInputCloud(cloud_normals);
-    sift.compute(result);
-
-    std::cout << "No of SIFT points in the result are " << result.points.size () << std::endl;
-
-/*
-  // Copying the pointwithscale to pointxyz so as visualize the cloud
-  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_temp (new pcl::PointCloud<pcl::PointXYZ>);
-  copyPointCloud(result, *cloud_temp);
-  std::cout << "SIFT points in the cloud_temp are " << cloud_temp->points.size () << std::endl;
-
-
-  // Visualization of keypoints along with the original cloud
-  pcl::visualization::PCLVisualizer viewer("PCL Viewer");
-  pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> keypoints_color_handler (cloud_temp, 0, 255, 0);
-  pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> cloud_color_handler (cloud_xyz, 255, 0, 0);
-  viewer.setBackgroundColor( 0.0, 0.0, 0.0 );
-  viewer.addPointCloud(cloud_xyz, cloud_color_handler, "cloud");
-  viewer.addPointCloud(cloud_temp, keypoints_color_handler, "keypoints");
-  viewer.setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 7, "keypoints");
-
-  while(!viewer.wasStopped ())
-  {
-  viewer.spinOnce ();
-  }
-
-*/
-
+    outfile.close();
     return 0;
 
 }

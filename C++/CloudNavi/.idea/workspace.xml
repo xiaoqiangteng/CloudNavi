@@ -2,17 +2,19 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="cloudnavi" targetName="ply2pcdColor" />
       <config projectName="cloudnavi" targetName="GeneratePCD" />
-      <config projectName="cloudnavi" targetName="narf_keypoint_extraction" />
-      <config projectName="cloudnavi" targetName="CorrespondenceEstimation" />
       <config projectName="cloudnavi" targetName="obj2pcd" />
-      <config projectName="cloudnavi" targetName="icp" />
+      <config projectName="cloudnavi" targetName="GeneratePCDFromOurs" />
       <config projectName="cloudnavi" targetName="ply2pcd" />
-      <config projectName="cloudnavi" targetName="matrix_transform" />
       <config projectName="cloudnavi" targetName="locEstimationWithInteger" />
       <config projectName="cloudnavi" targetName="visulization" />
       <config projectName="cloudnavi" targetName="sift_normal_keypoint_estimation" />
+      <config projectName="cloudnavi" targetName="locEstimationAll" />
+      <config projectName="cloudnavi" targetName="ply2pcdColor" />
+      <config projectName="cloudnavi" targetName="narf_keypoint_extraction" />
+      <config projectName="cloudnavi" targetName="CorrespondenceEstimation" />
+      <config projectName="cloudnavi" targetName="icp" />
+      <config projectName="cloudnavi" targetName="matrix_transform" />
       <config projectName="cloudnavi" targetName="locEstimation" />
     </generated>
   </component>
@@ -37,21 +39,50 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+            <state relative-caret-position="108">
+              <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="locEstimation.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="locEstimation.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/locEstimation.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <state relative-caret-position="427">
+              <caret line="193" column="8" lean-forward="false" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
               <folding>
                 <element signature="e#37#56#0" expanded="true" />
-                <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
+                <marker date="1525424872650" expanded="true" signature="3581:3845" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneratePCDFromOurs.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GeneratePCDFromOurs.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="102" column="25" lean-forward="false" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#485#843#0" expanded="false" />
+                <element signature="e#845#2328#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sift_normal_keypoint_estimation.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sift_normal_keypoint_estimation.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="153" column="141" lean-forward="false" selection-start-line="153" selection-start-column="141" selection-end-line="153" selection-end-column="141" />
+              <folding>
+                <element signature="e#1755#1774#0" expanded="true" />
+                <element signature="e#1945#1971#0" expanded="true" />
+                <element signature="e#2367#2615#0" expanded="false" />
+                <element signature="e#2617#2975#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -62,6 +93,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>est_loc_string</find>
+      <find>GeneratePCDFromOurs</find>
+      <find>compute_start_time</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -76,9 +109,12 @@
         <option value="$PROJECT_DIR$/obj2pcd.cpp" />
         <option value="$PROJECT_DIR$/locEstimationWithInteger.cpp" />
         <option value="$PROJECT_DIR$/locEstimationWithoutLoc.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CorrespondenceEstimation.cpp" />
+        <option value="$PROJECT_DIR$/locEstimationAll.cpp" />
         <option value="$PROJECT_DIR$/locEstimation.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/GeneratePCDFromOurs.cpp" />
+        <option value="$PROJECT_DIR$/sift_normal_keypoint_estimation.cpp" />
       </list>
     </option>
   </component>
@@ -169,59 +205,67 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Build All">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="icp" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="GeneratePCDFromOurs" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
-    <configuration name="CorrespondenceEstimation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="CorrespondenceEstimation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="CorrespondenceEstimation">
+    <configuration name="CorrespondenceEstimation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="CorrespondenceEstimation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="GeneratePCDFromOurs">
       <envs />
     </configuration>
-    <configuration name="GeneratePCD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="GeneratePCD" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="GeneratePCD">
+    <configuration name="GeneratePCD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="GeneratePCD" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="GeneratePCDFromOurs">
       <envs />
     </configuration>
-    <configuration name="icp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="icp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="icp">
+    <configuration name="GeneratePCDFromOurs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="GeneratePCDFromOurs" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="GeneratePCDFromOurs">
       <envs />
     </configuration>
-    <configuration name="locEstimation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="locEstimation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="locEstimation">
+    <configuration name="icp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="icp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
       <envs />
     </configuration>
-    <configuration name="locEstimationWithInteger" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="locEstimationWithInteger" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="locEstimationWithInteger">
+    <configuration name="locEstimation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="locEstimation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
       <envs />
     </configuration>
-    <configuration name="matrix_transform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="matrix_transform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="ply2pcd">
+    <configuration name="locEstimationAll" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="locEstimationAll" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
       <envs />
     </configuration>
-    <configuration name="narf_keypoint_extraction" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="narf_keypoint_extraction" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="ply2pcd">
+    <configuration name="locEstimationWithInteger" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="locEstimationWithInteger" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
       <envs />
     </configuration>
-    <configuration name="obj2pcd" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="obj2pcd" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="ply2pcd">
+    <configuration name="matrix_transform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="matrix_transform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
       <envs />
     </configuration>
-    <configuration name="ply2pcd" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="ply2pcd" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="ply2pcd">
+    <configuration name="narf_keypoint_extraction" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="narf_keypoint_extraction" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
       <envs />
     </configuration>
-    <configuration name="ply2pcdColor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="ply2pcdColor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="visulization">
+    <configuration name="obj2pcd" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="obj2pcd" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
       <envs />
     </configuration>
-    <configuration name="sift_normal_keypoint_estimation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="sift_normal_keypoint_estimation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="visulization">
+    <configuration name="ply2pcd" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="ply2pcd" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
+      <envs />
+    </configuration>
+    <configuration name="ply2pcdColor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="ply2pcdColor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
+      <envs />
+    </configuration>
+    <configuration name="sift_normal_keypoint_estimation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="sift_normal_keypoint_estimation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="sift_normal_keypoint_estimation">
       <envs />
     </configuration>
     <configuration name="visulization" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cloudnavi" TARGET_NAME="visulization" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cloudnavi" RUN_TARGET_NAME="visulization">
       <envs />
     </configuration>
-    <list size="13">
+    <list size="15">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.CorrespondenceEstimation" />
       <item index="2" class="java.lang.String" itemvalue="Application.GeneratePCD" />
-      <item index="3" class="java.lang.String" itemvalue="Application.icp" />
-      <item index="4" class="java.lang.String" itemvalue="Application.locEstimation" />
-      <item index="5" class="java.lang.String" itemvalue="Application.locEstimationWithInteger" />
-      <item index="6" class="java.lang.String" itemvalue="Application.matrix_transform" />
-      <item index="7" class="java.lang.String" itemvalue="Application.narf_keypoint_extraction" />
-      <item index="8" class="java.lang.String" itemvalue="Application.obj2pcd" />
-      <item index="9" class="java.lang.String" itemvalue="Application.ply2pcd" />
-      <item index="10" class="java.lang.String" itemvalue="Application.ply2pcdColor" />
-      <item index="11" class="java.lang.String" itemvalue="Application.sift_normal_keypoint_estimation" />
-      <item index="12" class="java.lang.String" itemvalue="Application.visulization" />
+      <item index="3" class="java.lang.String" itemvalue="Application.GeneratePCDFromOurs" />
+      <item index="4" class="java.lang.String" itemvalue="Application.icp" />
+      <item index="5" class="java.lang.String" itemvalue="Application.locEstimation" />
+      <item index="6" class="java.lang.String" itemvalue="Application.locEstimationAll" />
+      <item index="7" class="java.lang.String" itemvalue="Application.locEstimationWithInteger" />
+      <item index="8" class="java.lang.String" itemvalue="Application.matrix_transform" />
+      <item index="9" class="java.lang.String" itemvalue="Application.narf_keypoint_extraction" />
+      <item index="10" class="java.lang.String" itemvalue="Application.obj2pcd" />
+      <item index="11" class="java.lang.String" itemvalue="Application.ply2pcd" />
+      <item index="12" class="java.lang.String" itemvalue="Application.ply2pcdColor" />
+      <item index="13" class="java.lang.String" itemvalue="Application.sift_normal_keypoint_estimation" />
+      <item index="14" class="java.lang.String" itemvalue="Application.visulization" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -241,12 +285,12 @@
       <workItem from="1525054316452" duration="31292000" />
       <workItem from="1525310849605" duration="4000" />
       <workItem from="1525310938074" duration="1886000" />
-      <workItem from="1525318048547" duration="11829000" />
+      <workItem from="1525318048547" duration="27860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59529000" />
+    <option name="totallyTimeSpent" value="75560000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -280,7 +324,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -307,7 +351,7 @@
           <caret line="128" column="44" lean-forward="false" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
-            <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
+            <marker date="1525424872650" expanded="true" signature="3581:3845" ph="..." />
           </folding>
         </state>
       </provider>
@@ -336,7 +380,7 @@
           <caret line="135" column="13" lean-forward="false" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
-            <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
+            <marker date="1525424872650" expanded="true" signature="3581:3845" ph="..." />
           </folding>
         </state>
       </provider>
@@ -365,7 +409,7 @@
           <caret line="135" column="13" lean-forward="false" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
-            <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
+            <marker date="1525424872650" expanded="true" signature="3581:3845" ph="..." />
           </folding>
         </state>
       </provider>
@@ -409,31 +453,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/pcl-1.8/pcl/console/parse.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/matrix_transform.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-630">
           <caret line="40" column="81" lean-forward="false" selection-start-line="40" selection-start-column="81" selection-end-line="40" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/narf_keypoint_extraction.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-864">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sift_normal_keypoint_estimation.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="64" column="35" lean-forward="false" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -451,29 +474,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GeneratePCD.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="917">
-          <caret line="83" column="25" lean-forward="false" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/locEstimationWithoutLoc.cpp" />
     <entry file="file://$PROJECT_DIR$/ply2pcd.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="56" column="26" lean-forward="false" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -494,13 +499,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/locEstimationAll.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="132" column="49" lean-forward="false" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+          <folding>
+            <element signature="e#1021#1350#0" expanded="false" />
+            <element signature="e#1352#2685#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/pcl-1.8/pcl/console/parse.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/backward/backward_warning.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GeneratePCD.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="40" column="20" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/basic_string.tcc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/narf_keypoint_extraction.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GeneratePCDFromOurs.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="102" column="25" lean-forward="false" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#485#843#0" expanded="false" />
+            <element signature="e#845#2328#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/locEstimation.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        <state relative-caret-position="427">
+          <caret line="193" column="8" lean-forward="false" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
           <folding>
             <element signature="e#37#56#0" expanded="true" />
-            <marker date="1525419828661" expanded="true" signature="3581:3845" ph="..." />
+            <marker date="1525424872650" expanded="true" signature="3581:3845" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sift_normal_keypoint_estimation.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="153" column="141" lean-forward="false" selection-start-line="153" selection-start-column="141" selection-end-line="153" selection-end-column="141" />
+          <folding>
+            <element signature="e#1755#1774#0" expanded="true" />
+            <element signature="e#1945#1971#0" expanded="true" />
+            <element signature="e#2367#2615#0" expanded="false" />
+            <element signature="e#2617#2975#0" expanded="false" />
           </folding>
         </state>
       </provider>
